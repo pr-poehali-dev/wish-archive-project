@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "Get wishes for user",
+      "method": "GET",
+      "path": "/?user_id=1&action=wishes",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "wishes": []
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new wish",
+      "method": "POST",
+      "body": {
+        "user_id": 1,
+        "title": "Тестовое желание",
+        "description": "Описание тестового желания"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
